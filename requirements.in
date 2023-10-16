@@ -1,6 +1,9 @@
 aiogram<3
+cachetools
 django
 django-environ
+emoji
 pip-tools
 psycopg2-binary
 pre-commit
+requests

@@ -17,5 +17,12 @@ async def start_command(message: types.Message):
     )
 
 
+@dp.message_handler(commands=['get_weather'])
+async def get_weather_command(message: types.Message):
+    await message.reply(
+        txt.START_MESSAGE.format(name=message.from_user.username), parse_mode='html'
+    )
+
+
 def main():
     executor.start_polling(dp, skip_updates=True)
