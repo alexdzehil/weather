@@ -1,0 +1,5 @@
+aiogram
+django
+pip-tools
+psycopg2-binary
+pre-commit
