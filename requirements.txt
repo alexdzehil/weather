@@ -34,6 +34,8 @@ distlib==0.3.7
     # via virtualenv
 django==4.2.6
     # via -r requirements.in
+django-environ==0.11.2
+    # via -r requirements.in
 filelock==3.12.4
     # via virtualenv
 frozenlist==1.4.0
