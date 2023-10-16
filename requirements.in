@@ -3,7 +3,6 @@ cachetools
 django
 django-environ
 django-ninja
-emoji
 pip-tools
 psycopg2-binary
 pre-commit

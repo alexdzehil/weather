@@ -44,8 +44,6 @@ django-environ==0.11.2
     # via -r requirements.in
 django-ninja==0.22.2
     # via -r requirements.in
-emoji==2.8.0
-    # via -r requirements.in
 filelock==3.12.4
     # via virtualenv
 frozenlist==1.4.0
