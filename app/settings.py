@@ -134,3 +134,49 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 BOT_TOKEN = env('BOT_TOKEN')
 WEATHER_API_KEY = env('WEATHER_API_KEY')
 GEO_API_KEY = env('GEO_API_KEY')
+
+LOGGING_DIR = Path(BASE_DIR) / 'logs'
+LOGGING_DIR.mkdir(parents=True, exist_ok=True)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': Path(LOGGING_DIR) / 'debug.log',
+            'maxBytes': 1024 * 1024 * 100,
+            'backupCount': 2,
+            'formatter': 'verbose',
+        },
+        'bot_file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': Path(LOGGING_DIR) / 'bot_debug.log',
+            'maxBytes': 1024 * 1024 * 100,
+            'backupCount': 2,
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'debug': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
+        'bot': {
+            'handlers': ['console', 'bot_file'],
+            'level': 'INFO',
+        },
+    },
+}

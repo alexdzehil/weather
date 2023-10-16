@@ -15,7 +15,6 @@ class Weather(NamedTuple):
     temperature: int
     pressure: int
     wind_speed: int
-    condition: str
 
 
 def get_weather(coordinates: Coordinates) -> Weather | None:
@@ -33,7 +32,6 @@ def get_weather(coordinates: Coordinates) -> Weather | None:
             temperature=weather_data['fact']['temp'],
             pressure=weather_data['fact']['pressure_mm'],
             wind_speed=weather_data['fact']['wind_speed'],
-            condition=weather_data['fact']['condition'],
         )
         cache[coordinates] = weather
         return weather
