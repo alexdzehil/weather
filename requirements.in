@@ -2,6 +2,7 @@ aiogram<3
 cachetools
 django
 django-environ
+django-ninja
 emoji
 pip-tools
 psycopg2-binary
