@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 3rd party apps
     # project apps
+    'apps.api',
     'apps.tg_bot',
     'apps.weather',
 ]
