@@ -24,6 +24,6 @@ def get_coordinates(city_name: str) -> Coordinates | None:
             'featureMember'
         ][0]['GeoObject']
         return Coordinates(
-            latitude=geo_object['Point']['pos'].split(' ')[0],
-            longitude=geo_object['Point']['pos'].split(' ')[1],
+            latitude=geo_object['Point']['pos'].split(' ')[1],
+            longitude=geo_object['Point']['pos'].split(' ')[0],
         )
