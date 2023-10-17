@@ -7,8 +7,8 @@ from .constants import GEO_URL
 
 
 class Coordinates(NamedTuple):
-    latitude: float
-    longitude: float
+    latitude: str
+    longitude: str
 
 
 @lru_cache(maxsize=128)

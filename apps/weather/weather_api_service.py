@@ -14,15 +14,15 @@ cache = TTLCache(maxsize=128, ttl=1800)
 class Weather(NamedTuple):
     temperature: int
     pressure: int
-    wind_speed: int
+    wind_speed: float
 
 
 def get_weather(coordinates: Coordinates) -> Weather | None:
     if coordinates in cache:
         return cache[coordinates]
 
-    url = WEATHER_URL.replace('LAT', str(coordinates.latitude)).replace(
-        'LON', str(coordinates.longitude)
+    url = WEATHER_URL.replace('LAT', coordinates.latitude).replace(
+        'LON', coordinates.longitude
     )
     headers = {'X-Yandex-API-Key': settings.WEATHER_API_KEY}
     response = requests.get(url, headers=headers)
